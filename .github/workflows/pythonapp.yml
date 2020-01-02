@@ -22,6 +22,7 @@ jobs:
     - name: run
       run: |
         python getfromvitadb.py
-    - name: create plot
-      run: |
-        python plot.py
+    - name: Push new files back to master.
+      uses: mikeal/publish-to-github-action@1.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
