@@ -4,8 +4,12 @@ import json
 r = requests.get('https://rinnegatamante.it/vitadb/list_hbs_json.php')
 j = json.loads(r.content)
 for entry in j:
-  f = open("files/" + entry["titleid"] + ".json")
-  fi = f.read()
+  try:
+    f = open("files/" + entry["titleid"] + ".json")
+    fi = f.read()
+  except:
+    f = open("files/" + entry["titleid"] + ".json","x")
+    f = open("files/" + entry["titleid"] + ".json","r")
 
   jsonbefore = json.loads(fi)
 
