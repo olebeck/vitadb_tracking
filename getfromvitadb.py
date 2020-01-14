@@ -7,12 +7,12 @@ for entry in j:
   try:
     f = open("files/" + entry["titleid"] + ".json")
     fi = f.read()
-  except:
+    jsonbefore = json.loads(fi)
+    except:
     f = open("files/" + entry["titleid"] + ".json","x")
     f = open("files/" + entry["titleid"] + ".json","r")
     fi = f.read()
-
-  jsonbefore = json.loads(fi)
+    jsonbefore = []
 
   x = datetime.datetime.now()
   dlcount = entry["downloads"]
