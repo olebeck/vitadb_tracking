@@ -8,7 +8,7 @@ for entry in j:
     f = open("files/" + entry["titleid"] + ".json")
     fi = f.read()
     jsonbefore = json.loads(fi)
-    except:
+  except:
     f = open("files/" + entry["titleid"] + ".json","x")
     f = open("files/" + entry["titleid"] + ".json","r")
     fi = f.read()
